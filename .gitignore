@@ -1,0 +1,11 @@
+# Django/Python
+*.pyc
+__pycache__/
+*.sqlite3
+/env/
+/static/
+/media/
+
+# Windows
+Thumbs.db
+.DS_Store
