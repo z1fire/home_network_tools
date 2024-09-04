@@ -1,17 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Event</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Add a New Event</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add Event</button>
-    </form>
-    <a href="{% url 'calendar_integration:home' %}">Back to Calendar</a>
+    <div class="calendar-container">
+        <h1>Add a New Event</h1>
+        <form method="post" class="event-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Add Event</button>
+        </form>
+        <a href="{% url 'calendar_integration:home' %}" class="button">Back to Calendar</a>
+    </div>
 </body>
 </html>
