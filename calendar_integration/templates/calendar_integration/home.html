@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Integration</title>
+</head>
+<body>
+    <h1>Calendar Events</h1>
+    <a href="{% url 'calendar_integration:add_event' %}">Add New Event</a>
+    <ul>
+        {% for event in events %}
+            <li>
+                <strong>{{ event.title }}</strong> - {{ event.start_time }} to {{ event.end_time }}<br>
+                {{ event.description }}<br>
+                Location: {{ event.location }}
+            </li>
+        {% empty %}
+            <li>No events scheduled.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
