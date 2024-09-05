@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ month_name }} {{ year }} - Calendar View</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="calendar-container">
+        <h1>{{ month_name }} {{ year }}</h1>
+        <div class="calendar-grid">
+            <div class="calendar-header">Sun</div>
+            <div class="calendar-header">Mon</div>
+            <div class="calendar-header">Tue</div>
+            <div class="calendar-header">Wed</div>
+            <div class="calendar-header">Thu</div>
+            <div class="calendar-header">Fri</div>
+            <div class="calendar-header">Sat</div>
+            {% for week in month_days %}
+                {% for day in week %}
+                    <div class="calendar-day">
+                        {% if day %}
+                            <div class="date-number">{{ day }}</div>
+                            {% if day in events_by_day %}
+                                <ul class="event-list">
+                                    {% for event in events_by_day.day %}
+                                        <li>{{ event.title }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <a href="{% url 'calendar_integration:add_event' %}" class="button">Add New Event</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Network Tools</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+</head>
+<body>
+    <h1>Welcome to Home Network Tools</h1>
+    <ul>
+        <li><a href="{% url 'food_inventory:home' %}">Food Inventory</a></li>
+        <li><a href="{% url 'todo:home' %}">To-Do List</a></li>
+        <li><a href="{% url 'calendar_integration:calendar_view' %}">Calendar</a></li>
+    </ul>
+</body>
+</html>

@@ -145,3 +145,15 @@ h1 {
 .button:hover {
     background-color: #2980b9;
 }
+/* Calendar Styles */ 
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-top: 20px; }
+
+.calendar-header { font-weight: bold; text-align: center; padding: 10px; background-color: #3498db; color: white; }
+
+.calendar-day { min-height: 100px; border: 1px solid #ddd; padding: 5px; background-color: #f9f9f9; position: relative; }
+
+.date-number { font-weight: bold; font-size: 14px; position: absolute; top: 5px; left: 5px; }
+
+.event-list { margin: 0; padding: 0; list-style: none; }
+
+.event-list li { font-size: 12px; color: #444; margin-top: 5px; }

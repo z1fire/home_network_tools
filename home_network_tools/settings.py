@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'calendar_integration',
     'food_inventory',
     'todo',
+    'bootstrap_datepicker_plus',
     
 ]
 
@@ -132,3 +133,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

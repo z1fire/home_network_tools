@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar Integration</title>
-    <!-- Link to the CSS file -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
@@ -20,7 +19,9 @@
                         <div class="event-details">
                             {{ occurrence.start_time|date:"F j, Y, g:i a" }} to {{ occurrence.end_time|date:"F j, Y, g:i a" }}<br>
                             {{ occurrence.description }}<br>
-                            Location: {{ occurrence.location }}
+                            Location: {{ occurrence.location }}<br>
+                            <a href="{% url 'calendar_integration:edit_event' event.id %}" class="button">Edit</a>
+                            <a href="{% url 'calendar_integration:delete_event' event.id %}" class="button">Delete</a>
                         </div>
                     </li>
                 {% endfor %}

@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Event</title>
+    <title>Edit Event</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    {{ form.media }}  <!-- Include media for datepicker -->
 </head>
 <body>
     <div class="calendar-container">
-        <h1>Add a New Event</h1>
+        <h1>Edit Event: {{ event.title }}</h1>
         <form method="post" class="event-form">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="button">Add Event</button>
+            <button type="submit" class="button">Save Changes</button>
         </form>
         <a href="{% url 'calendar_integration:home' %}" class="button">Back to Calendar</a>
     </div>
